@@ -15,13 +15,22 @@ const createToken = async () => {
   };
   return payloadHeader;
 }
-
+let idd;
 export const addToPhonebook = async (name, number) => {
   const header = await createToken();
-
+  fire.auth().onAuthStateChanged((user) => {
+    if (user) {
+      // User logged in already or has just logged in.
+      console.log(user.email);
+idd=user.email;
+console.log(idd+"  ikop")
+    } 
+  });
+console.log(name+" "+number+" "+idd);
   const payload = {
     name,
     number,
+    idd
   }
   try {
     console.log(payload);
