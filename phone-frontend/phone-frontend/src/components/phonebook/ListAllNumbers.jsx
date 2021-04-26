@@ -45,14 +45,14 @@ const givetable = () => {
 
   return (
     <div>
-      <Link to="/add-number">Add Ingredient</Link>
-      <h2>Ingredient Book</h2>
+      <Link to="/add-number">Add number</Link>
+      <h2>Phone numbers</h2>
       
       <table>
         <thead>
           <tr>
-            <th>Ingredient</th>
-            <th>Quantity</th>
+            <th>Name</th>
+            <th>Number</th>
           </tr>
         </thead>
         <tbody>

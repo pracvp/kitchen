@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {Header} from './Header'
 import MyComponent from './MyComponent'
-import {Button} from 'semantic-ui-react'
 const initialValues = {
 ingredients: "",
 containss: "",
@@ -65,18 +64,8 @@ return (
     <label for="containss">Dish Name Contains (no commas):</label> <input  id="contains" type="text" name="containss" value={values.containss} placeholder="e.g. noodles (optional)"  onChange={handleInputChange} /></div>
     <div class="button">
     <br />
-    <Button basic color='red' type="button" value="Reset" id="resetButton" onClick={resetResults}>
-            Reset
-        </Button>
-        <hr></hr>
-        <Button basic color='red' type="submit" value="Search ..." id="searchButton" onClick={handleInputChange}>
-            Search
-        </Button>
-        <br>
-        </br>
-        <br>
-        </br>
-        
+    <input class="button" type="button" value="Reset" id="resetButton" onClick={resetResults}/>
+    <input class="button" type="submit" value="Search ..." id="searchButton" onClick={handleInputChange}/>
     <MyComponent ingredients={values.ingredients} containss={values.containss}/>
     </div>
 </form>
