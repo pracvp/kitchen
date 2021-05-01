@@ -1,3 +1,6 @@
 /phone-frontend/node_modules
 /phone-backend/node_modules
 /phone-backend/serviceAccount.json
+/phone-frontend/config.js
+/phone-frontend/fire.js
+/phone-frontend/firebase.js
