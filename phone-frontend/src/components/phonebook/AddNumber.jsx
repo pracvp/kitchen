@@ -17,7 +17,6 @@ const AddNumber = () => {
 
 
     if (name && phone) {
-     
       return addToPhonebook(name, phone);
     }
     return console.log('You must enter a name and a number');
@@ -25,7 +24,6 @@ const AddNumber = () => {
   
   return (
     <div>
-   
       <Link to="/List">View Ingredient Book</Link>
       <div className="addnmber">
     <h2>Add Ingredient</h2>
@@ -37,19 +35,15 @@ const AddNumber = () => {
         onChange={({ target }) => setName(target.value)}
       /><br />
       <br/>
-     
       <input
         type="text"
         placeholder="Quantity"
         onChange={({ target }) => setPhone(target.value)}
       /><br />
-       <br/>
+      <br/>
       <Button basic color='violet' type="submit">
         Add number
       </Button>
-
-
-     
     </form>
     </div>
     </div>

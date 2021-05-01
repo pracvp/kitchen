@@ -7,7 +7,7 @@ import Login from './components/session/Login';
 import ListAllNumbers from './components/phonebook/ListAllNumbers';
 import AddNumber from './components/phonebook/AddNumber';
 import Register from './components/Register'
-import { AuthProvider, AuthContext } from "./components/Auth";
+//import { AuthProvider, AuthContext } from "./components/Auth";
 
 
 
@@ -43,7 +43,7 @@ function App() {
           : (
             <>
             <span onClick={signOut}>
-              <a href="/main">Sign out</a>
+            <Main_page />
             </span>
             <Switch>
               <Route path="/add-number">
@@ -55,6 +55,9 @@ function App() {
               </Route>
               <Route path="/search">
                 <Search />
+              </Route>
+              <Route path="/home">
+                <Main_page />
               </Route>
             </Switch>
             </>

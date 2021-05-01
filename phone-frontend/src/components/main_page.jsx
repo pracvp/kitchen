@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button, Segment, Form } from 'semantic-ui-react'
 
-import {Header} from './Header'
 export const Main_page = () => {
 return (
     <div>

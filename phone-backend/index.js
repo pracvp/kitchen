@@ -2,23 +2,25 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+
+
 const decodeIDToken = require('./authenticateToken');
 const phonesRouter = require('./controllers/phones');
 const app = express();
 
 mongoose.connect(
-  'mongodb://vp:reviewJS@cluster0-shard-00-00.tmsqd.mongodb.net:27017,cluster0-shard-00-01.tmsqd.mongodb.net:27017,cluster0-shard-00-02.tmsqd.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-km9xsi-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true })
+  'mongodb://localhost:27017/kitchenDB', { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log('Connected to database');
   })
   .catch((err) => {
     console.log('Error connecting to DB', err.message);
   });
-app.use(cors());
-app.use(express.json());
-app.use(decodeIDToken);
-
-app.use('/api', phonesRouter);
+  app.use(cors());
+  app.use(express.json());
+  app.use(decodeIDToken);
+  
+  app.use('/api', phonesRouter);
 
 const PORT = 3001;
 app.listen(PORT, () => {

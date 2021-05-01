@@ -2,9 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getPhonebookEntries } from '../../services/phonebookServices';
 import fire from '../../fire'
+import { Button, Segment, Form } from 'semantic-ui-react'
+import { handleDeleteProperty} from '../../services/phonebookServices';
 let str;
 const ListAllNumbers = () => {
   const [entries, setEntries] = useState();
+
 
   
   fire.auth().onAuthStateChanged((user) => {
@@ -33,9 +36,13 @@ const givetable = () => {
   return entries.map(entry => {
  // console.log(entry.idd+ " email "+ str+ " strrr")
   if (entry.idd === str) {
-    return ( <tr>
+    return ( <tr key={entry._id}>
       <td>{entry.name}</td>
       <td>{entry.number}</td>
+      <td><Button basic color='violet' type="submit" onClick={e => handleDeleteProperty(entry.id)}>  
+      Remove
+      </Button>
+</td>
     </tr> 
   );
   }  
@@ -56,7 +63,7 @@ const givetable = () => {
           </tr>
         </thead>
         <tbody>
-       {givetable()}
+          {givetable()}
         </tbody>
       </table>
     </div>

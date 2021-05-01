@@ -59,7 +59,7 @@ return (
 <p class="section-subheading">
 <form id="query-form">
     <div>
-    <label for="ingredients">Ingredients (commas separated):</label> <input  id="ingredients" type="text" name="ingredients" value={values.ingredients} placeholder="e.g. honey, potato (optional)"  onChange={handleInputChange} />
+    <label for="ingredients">Ingredients (commas separated):</label> <input  id="ingredients" type="text" name="ingredients" value={values.ingredients} placeholder="e.g. honey, potato (optional)" onChange={handleInputChange} />
     </div>
     <div>
     <label for="containss">Dish Name Contains (no commas):</label> <input  id="contains" type="text" name="containss" value={values.containss} placeholder="e.g. noodles (optional)"  onChange={handleInputChange} /></div>
