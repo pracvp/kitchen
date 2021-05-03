@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import {Header} from './Header'
 import MyComponent from './MyComponent'
-import {Button} from 'semantic-ui-react'
 const initialValues = {
 ingredients: "",
 containss: "",
@@ -10,8 +9,10 @@ santized_contain:""
 };
 
 
-export default function Search() {
+const Search = (props) => {
 const [values, setValues] = useState(initialValues);
+//console.log(props.containss)
+console.log(props.containss)
 
 const handleInputChange = (e) => {
 let { name, value } = e.target;
@@ -53,30 +54,25 @@ function resetResults() {
     })
 }
 
+useEffect(() => {
+    setValues(props);
+  }, [props]);
+
+
 return (
     <div>
 <Header/>
 <p class="section-subheading">
 <form id="query-form">
     <div>
-    <label for="ingredients">Ingredients (commas separated):</label> <input  id="ingredients" type="text" name="ingredients" value={values.ingredients} placeholder="e.g. honey, potato (optional)" onChange={handleInputChange} />
+    <label for="ingredients">Ingredients (commas separated):</label> <input  id="ingredients" type="text" name="ingredients" value={values.ingredients} placeholder="e.g. honey, potato (optional)"  onChange={handleInputChange} />
     </div>
     <div>
     <label for="containss">Dish Name Contains (no commas):</label> <input  id="contains" type="text" name="containss" value={values.containss} placeholder="e.g. noodles (optional)"  onChange={handleInputChange} /></div>
     <div class="button">
     <br />
-    <Button basic color='red' type="button" value="Reset" id="resetButton" onClick={resetResults}>
-            Reset
-        </Button>
-        <hr></hr>
-        <Button basic color='red' type="submit" value="Search ..." id="searchButton" onClick={handleInputChange}>
-            Search
-        </Button>
-        <br>
-        </br>
-        <br>
-        </br>
-        
+    <input class="button" type="button" value="Reset" id="resetButton" onClick={resetResults}/>
+    <input class="button" type="submit" value="Search ..." id="searchButton" onClick={handleInputChange}/>
     <MyComponent ingredients={values.ingredients} containss={values.containss}/>
     </div>
 </form>
@@ -87,3 +83,5 @@ return (
 
 );
 }
+
+export default Search;

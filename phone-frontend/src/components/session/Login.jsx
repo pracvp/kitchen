@@ -13,12 +13,19 @@ const Login = () => {
             console.error('Incorrect username or password');
         });
     }
+    const handleSubmitSignup = (e) => {
+        e.preventDefault();
+        fire.auth().createUserWithEmailAndPassword(email, password).catch((error) => {
+            console.error('Incorrect username or password');
+        });
+    }
+
     return (
 <div classname="formalign">
     <Header/>
 <Segment inverted>
         <h2>Login</h2>
-            <Form onSubmit={handleSubmit}>
+            <Form>
          
             <Form.Field>
                 <input
@@ -38,12 +45,12 @@ const Login = () => {
                 <br />
                 <div>
   
-      <Button inverted color="teal">
+      <Button onClick={handleSubmit} inverted color="teal">
         Login
       </Button>
-    <Link to="/main">
-    <Button inverted color="teal">
-    Continue without Login
+    <Link to="/home">
+    <Button onClick={handleSubmitSignup}  inverted color="teal">
+    Sign Up!
     </Button>
     </Link>
   

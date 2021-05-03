@@ -6,7 +6,7 @@ import fire from './fire.js';
 import Login from './components/session/Login';
 import ListAllNumbers from './components/phonebook/ListAllNumbers';
 import AddNumber from './components/phonebook/AddNumber';
-import Register from './components/Register'
+//import {firebaseAuth} from './provider/AuthProvider'
 //import { AuthProvider, AuthContext } from "./components/Auth";
 
 
@@ -31,11 +31,12 @@ function App() {
           ? (
             <>
             <Switch>
-            <Route exact path="/register" component={Register} />
+        {/*    <Route exact path="/register" component={Register} /> */}
 
               <Route path="/">
                 <Login />
               </Route>
+
 
             </Switch>
             </>
@@ -56,9 +57,7 @@ function App() {
               <Route path="/search">
                 <Search />
               </Route>
-              <Route path="/home">
-                <Main_page />
-              </Route>
+
             </Switch>
             </>
           
