@@ -1,15 +1,15 @@
 body {
   color: #ffffff;
-  background-color: #000000;
+  background-color: #ab0759;
   overflow-x: hidden;
 }
-/*
+
 input {
   width: 50%;
   height:150%;
 
   align-items: center;
-} */
+}
 
 label {
   color: white;
@@ -25,7 +25,7 @@ html {
 }
 
 p {
-  color: #ffffff;
+  color: #becbff;
   font-size: 1.2rem;
   text-align: center;
   text-shadow: 1px 1px 5px black;
@@ -33,16 +33,13 @@ p {
 
 h1 {
   color: #ffffff;
-  text-shadow: 3px 3px 10px #75bcc5;
+  text-shadow: 3px 3px 10px #becbff;
   font-family: "Open Sans, sans-serif";
   text-align: center;
 }
 
 h3 {
   color: #ffffff;
-  
-  text-shadow: 3px 3px 10px #75bcc5;
-
 }
 
 li {
@@ -63,7 +60,7 @@ a:hover {
   margin: auto;
   max-width: 65%;
 }
- 
+
 .dish-image {
   border-radius: 10px;
   box-shadow: 3px 3px 10px black;
@@ -85,24 +82,11 @@ a:hover {
   max-width: 88%;
   text-shadow: 3px 3px 10px black;
 }
-.ui form{
-  margin: auto;
-  margin-top: 1rem;
-
-}
-.ui inverted segment{
-  margin: auto;
-  margin-top: 40rem;
-}
 
 .hero {
   width: 100%;
-  
 }
-.centerbuttons{
-  margin-left: 20rem;
-  margin-top: 30rem;
-}
+
 .section-heading {
   font-size: 3.3em;
   margin-top: 3rem;
@@ -201,13 +185,4 @@ footer {
     width: 90%;
   }
 
-}
-
-
-button.ui.teal.basic.button {
- 
-  margin-left: 33rem;
-}}
-.addnmber{
-  margin-left: 33rem;
 }

@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {Main_page} from './components/Main_page';
+import main_page from './components/main_page';
 import Search from './components/Search';
 import fire from './fire.js';
 import Login from './components/session/Login';
 import ListAllNumbers from './components/phonebook/ListAllNumbers';
 import AddNumber from './components/phonebook/AddNumber';
-//import {firebaseAuth} from './provider/AuthProvider'
-//import { AuthProvider, AuthContext } from "./components/Auth";
-
-
-
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   
@@ -31,38 +26,34 @@ function App() {
           ? (
             <>
             <Switch>
-        {/*    <Route exact path="/register" component={Register} /> */}
-
               <Route path="/">
                 <Login />
               </Route>
-
-
             </Switch>
             </>
           ) 
           : (
             <>
             <span onClick={signOut}>
-            <Main_page />
+              <a href="#">Sign out</a>
             </span>
             <Switch>
               <Route path="/add-number">
                 <AddNumber />
               </Route>
-            
-              <Route path="/List">
-                <ListAllNumbers />
+              <Route path="/home">
+                <main_page />
               </Route>
               <Route path="/search">
                 <Search />
               </Route>
-
+              <Route path="/List">
+                <ListAllNumbers />
+              </Route>
             </Switch>
             </>
           
           )}
-
       </Router>
     </div>
   );

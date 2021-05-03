@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from "react";
+import React, { useState } from "react";
 import {Header} from './Header'
 import MyComponent from './MyComponent'
 const initialValues = {
@@ -9,10 +9,8 @@ santized_contain:""
 };
 
 
-const Search = (props) => {
+export default function Search() {
 const [values, setValues] = useState(initialValues);
-//console.log(props.containss)
-console.log(props.containss)
 
 const handleInputChange = (e) => {
 let { name, value } = e.target;
@@ -54,11 +52,6 @@ function resetResults() {
     })
 }
 
-useEffect(() => {
-    setValues(props);
-  }, [props]);
-
-
 return (
     <div>
 <Header/>
@@ -83,5 +76,3 @@ return (
 
 );
 }
-
-export default Search;

@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { addToPhonebook} from '../../services/phonebookServices';
 import fire from '../../fire';
-import { Button, Segment, Form } from 'semantic-ui-react'
-
-import navbar from '../navbar';
 
 
 
@@ -25,28 +22,24 @@ const AddNumber = () => {
   
   return (
     <div>
-      <Link to="/List">View Ingredient Book</Link>
-      <div className="addnmber">
-    <h2>Add Ingredient</h2>
-  
+      <Link to="/">View phonebook</Link>
+    <h2>Add Number</h2>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Ingredient Name"
+        placeholder="Name"
         onChange={({ target }) => setName(target.value)}
       /><br />
-      <br/>
       <input
         type="text"
-        placeholder="Quantity"
+        placeholder="Number"
         onChange={({ target }) => setPhone(target.value)}
       /><br />
-      <br/>
-      <Button basic color='violet' type="submit">
+      
+      <button type="submit">
         Add number
-      </Button>
+      </button>
     </form>
-    </div>
     </div>
   )
 };

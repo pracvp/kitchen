@@ -10,14 +10,11 @@
     "bootstrap": "^4.6.0",
     "firebase": "^8.0.0",
     "jquery": "^3.6.0",
-    "mongodb-client-encryption": "^1.2.3",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
-    "react-native": "^0.64.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
-    "semantic-ui-react": "^2.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

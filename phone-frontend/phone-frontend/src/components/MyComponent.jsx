@@ -49,8 +49,7 @@ console.log("my component transfered "+ props.ingredients)
 
 useEffect(() => {
     let ont=props.ingredients;
-   // console.log(ont+" usee "+props.ingredients)
-    console.log(props.containss+"hey ")
+    console.log(ont+" usee "+props.ingredients)
     let cnt=props.containss;
     
     (async () => {
@@ -68,7 +67,6 @@ useEffect(() => {
 const data = await response.data.results;
 
     console.log(data)
-    console.log(cnt)
     setRecipes(data)
     ont="";
     })()
